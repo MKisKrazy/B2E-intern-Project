@@ -28,7 +28,7 @@ pip install -r requirements.txt
 
 ## Prediction:
 
-**Run the *predict.py* file**
+### **Run the *predict.py* file**
 >It fetches the data from the API , does prediction, uploads the predicted data to the API.
 >If you get the Plot and the output for evaluation metrics then prediction works fine.
 >If you get JSON data of actual and predcited as output then the data is succesfully uploaded to the API.
