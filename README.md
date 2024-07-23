@@ -12,12 +12,12 @@ Finally a webpage to showcase the plot and table of Actual vs Predicted.
 # Steps to run it Locally:
 Open the folder in an code editor for better experience
 
-### Install the required modules/libraries
+### Step 1 - Install the required modules/libraries
 
 ```
 pip install -r requirements.txt
 ```
-## Dataset upload:
+## Step 2 - Dataset upload:
 
 ### **Run the *backend.py* file**
 ### **Run the *upload.html* file**
@@ -26,14 +26,14 @@ pip install -r requirements.txt
 >Backend does the preprocessing.
 >The upload is succesful if we get an response code of 200 in the terminal of backend.py.
 
-## Prediction:
+## Step 3- Prediction and Upload Prediction:
 
 ### **Run the *predict.py* file**
 >It fetches the data from the API , does prediction, uploads the predicted data to the API.
 >If you get the Plot and the output for evaluation metrics then prediction works fine.
 >If you get JSON data of actual and predcited as output then the data is succesfully uploaded to the API.
 
-## To view the plot and the Actual Vs Predicted data:
+## Step 4 - To view the plot and the Actual Vs Predicted data:
 
 **Run the *pred_data.html* file or You can just click the *predict* button in the "upload.html" page to view them**
 
