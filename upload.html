@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload CSV</title>
+    </head>
+    <style>
+
+        body{
+            background-color: #002a3f;
+            padding: 0;
+            margin: 0;
+        }
+        input[type="file"]{
+        display: none;
+        }
+        label{
+        color: white;
+        height: 60px;
+        width: 250px;
+        background-color: #f5af09;
+        position: absolute;
+        margin: auto;
+        top:0;
+        bottom: 0;
+        Left: 0;
+        right: 0;
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "Montserrat";
+        border-radius:40px;
+
+        }
+
+        label:hover{
+            color: #f5af09;
+            background-color: azure;
+        }
+        
+        .container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding-top: 20%;
+        }
+        button{
+            padding: 15px 20px 15px 20px;
+            font-size: 30px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            color: rgb(23, 24, 24);
+            background-color: rgb(111, 77, 181);
+            border: none;
+            border-radius: 40px;
+            margin-top: 150px;
+        }
+    
+        button:hover{
+            box-shadow: 2px 1px 5px grey;
+            /* color: rgb(150, 55, 222);
+            background-color: rgb(50, 45, 45); */
+            cursor: pointer;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <form id="upload-form" enctype="multipart/form-data">
+        <div class="container">
+            <label for="file-input" >
+                Choose the File
+            <input type="file" id="file-input" name="file" accept=".csv" required>
+            
+            </label>
+            <button type="submit">Upload</button>
+            <button ><a href="pred_data.html">Predict</a></button>
+            
+        </div>
+ 
+    </form>
+    
+
+    <script>
+            
+        document.getElementById('upload-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var fileInput = document.getElementById('file-input');
+            var file = fileInput.files[0];
+
+            var formData = new FormData();
+            formData.append('file', file);
+
+            fetch('http://localhost:5000/upload', { 
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+
+       
+    </script>
+</body>
+</html>
