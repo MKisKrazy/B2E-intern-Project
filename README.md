@@ -19,8 +19,8 @@ pip install -r requirements.txt
 ```
 ## Dataset upload:
 
-**Run the *backend.py* file**
-**Run the *upload.html* file**
+### **Run the *backend.py* file**
+### **Run the *upload.html* file**
 >Click choose file in the webpage and select the dataset(i.e advertising.csv for this project).
 >Click upload. 
 >Backend does the preprocessing.
